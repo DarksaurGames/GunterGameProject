@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bxs1k2888oul2"]
+
+[ext_resource type="Script" uid="uid://k4fy2u5w5tkd" path="res://Scripts/teasure.gd" id="1_linqj"]
+[ext_resource type="Texture2D" uid="uid://208pybk23d8e" path="res://Sprites/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/Treasure_Chest (32 x 16).png" id="1_oh11e"]
+[ext_resource type="Texture2D" uid="uid://b4i1lcxtxgks4" path="res://Sprites/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="2_bh07w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedjb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x14eg"]
+atlas = ExtResource("2_bh07w")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql28n"]
+atlas = ExtResource("2_bh07w")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt6yi"]
+atlas = ExtResource("2_bh07w")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjy0t"]
+atlas = ExtResource("2_bh07w")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_linqj"]
+atlas = ExtResource("1_oh11e")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh07w"]
+atlas = ExtResource("1_oh11e")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm14s"]
+atlas = ExtResource("1_oh11e")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gedjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x14eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql28n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt6yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjy0t")
+}],
+"loop": 0,
+"name": &"Destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_linqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh07w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm14s")
+}],
+"loop": 0,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[node name="Teasure" type="Area2D" unique_id=1998085292]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_linqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=25447303]
+shape = SubResource("RectangleShape2D_gedjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652664399]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gedjb")
+animation = &"Open"
+flip_h = true
+
+[node name="TeasureOpenStart" type="Node2D" parent="." unique_id=1353326334]
+light_mask = 32
+visibility_layer = 32
+position = Vector2(12, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,108 @@
+[gd_resource type="TileSet" format=3 uid="uid://b1yvamkox2ggj"]
+
+[ext_resource type="Texture2D" uid="uid://6foc5wtg8r1q" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="1_s32qd"]
+[ext_resource type="Texture2D" uid="uid://w4qo3aag7ojb" path="res://Sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="2_stxsa"]
+[ext_resource type="Texture2D" uid="uid://cgtl2bubqf45f" path="res://Sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_tbrwh"]
+[ext_resource type="Texture2D" uid="uid://b14ihu08ggvp4" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_stxsa"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ga72e"]
+tile_data = PackedInt32Array(65536, 1, 0, 1, 327680, 1, 65538, 65537, 0, 65539, 65536, 5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
+texture = ExtResource("1_s32qd")
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+14:4/0 = 0
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.877739, -0.8992939, -2.5180216, -8, -2.6978807)
+14:4/0/physics_layer_0/polygon_0/one_way = true
+15:4/0 = 0
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.877739, -0.8992939, -2.5180216, -8, -2.6978807)
+15:4/0/physics_layer_0/polygon_0/one_way = true
+16:4/0 = 0
+16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.7770329, -8, -3.7770329)
+16:4/0/physics_layer_0/polygon_0/one_way = true
+17:4/0 = 0
+17:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.4173155, -8, -3.2374563)
+17:4/0/physics_layer_0/polygon_0/one_way = true
+18:4/0 = 0
+18:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.4173155, -8, -3.2374563)
+18:4/0/physics_layer_0/polygon_0/one_way = true
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+18:5/0 = 0
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+9:1/size_in_atlas = Vector2i(3, 3)
+9:1/0 = 0
+5:1/size_in_atlas = Vector2i(3, 3)
+5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
+texture = ExtResource("2_stxsa")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5wjh"]
+texture = ExtResource("3_tbrwh")
+0:0/size_in_atlas = Vector2i(7, 6)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+8:0/size_in_atlas = Vector2i(7, 6)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbrwh"]
+texture = ExtResource("4_stxsa")
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+12:5/animation_separation = Vector2i(1, 0)
+12:5/animation_frame_0/duration = 0.3
+12:5/animation_frame_1/duration = 0.3
+12:5/0 = 0
+12:5/0/modulate = Color(1, 1, 1, 0.5176471)
+12:5/0/z_index = 2
+12:6/animation_separation = Vector2i(1, 0)
+12:6/animation_frame_0/duration = 0.3
+12:6/animation_frame_1/duration = 0.3
+12:6/0 = 0
+12:6/0/modulate = Color(1, 1, 1, 0.5176471)
+12:6/0/z_index = 2
+12:7/0 = 0
+14:7/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fc0e3")
+sources/1 = SubResource("TileSetAtlasSource_eow3j")
+sources/2 = SubResource("TileSetAtlasSource_j5wjh")
+sources/3 = SubResource("TileSetAtlasSource_tbrwh")
+pattern_0 = SubResource("TileMapPattern_ga72e")

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b4riowwjhwpnj"]
+
+[ext_resource type="Texture2D" uid="uid://cu1mnj2efrqwy" path="res://Sprites/Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="1_3bnno"]
+[ext_resource type="Script" uid="uid://be0beqaua5isu" path="res://Scripts/power_up.gd" id="1_ppawt"]
+[ext_resource type="Texture2D" uid="uid://b4i1lcxtxgks4" path="res://Sprites/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="2_ojusm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gedjb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bewx8"]
+atlas = ExtResource("2_ojusm")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_henvk"]
+atlas = ExtResource("2_ojusm")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjgqw"]
+atlas = ExtResource("2_ojusm")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok1p2"]
+atlas = ExtResource("2_ojusm")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppawt"]
+atlas = ExtResource("1_3bnno")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojusm"]
+atlas = ExtResource("1_3bnno")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq57k"]
+atlas = ExtResource("1_3bnno")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gedjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bewx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_henvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjgqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok1p2")
+}],
+"loop": 0,
+"name": &"Destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppawt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojusm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq57k")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="PowerUp" type="Area2D" unique_id=1149056350 groups=["PowerUp"]]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_ppawt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=150028555]
+shape = SubResource("RectangleShape2D_gedjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1610703518]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gedjb")
+animation = &"Destroy"
+autoplay = "Idle"
+frame = 3
+frame_progress = 0.6134907
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
